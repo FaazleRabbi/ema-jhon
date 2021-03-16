@@ -1,23 +1,58 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/header/Header';
+import Shop from './components/shop/Shop';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Orderreview from './components/orderReview/Orderreview';
+import Inventory from './components/inventory/Inventory';
+import Details from './components/details/Details';
+import Error from './components/error/Error';
+import Review from './components/review/Review';
+import { removeFromDatabaseCart } from './utilities/databaseManager';
+import Signin from './components/Signin/Signin';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        
+
+      <Router>
+      <Header></Header>
+
+        <Switch>
+          <Route path='/shop'>
+            <Shop></Shop>
+          </Route>
+          
+          <Route path='/order'>
+            <Review></Review>
+          </Route>
+          <Route path="/inventory">
+            <Inventory></Inventory>
+          </Route>
+          <Route exact path='/'>
+            <Shop></Shop>
+          </Route>
+          <Route path = "/product/:productKey">
+            <Details></Details>
+          </Route>
+          <Route path='/signin'>
+            <Signin/>
+          </Route>
+          <Route path='*'>
+            <Error></Error>
+          </Route>
+          
+        </Switch>
+      </Router>
+
+      {/* <Shop></Shop> */}
     </div>
   );
 }

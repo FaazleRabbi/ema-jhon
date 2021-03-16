@@ -1,0 +1,7 @@
+.cart{
+    border-left:1px solid lightgray;
+    padding-left: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

@@ -1,0 +1,23 @@
+.header img{
+    height: 100px;
+    text-align: center;
+
+}
+.header{
+    text-align: center;
+}
+.header h1{
+    color: violet;
+    text-align: center;
+}
+
+.header Link{
+    background-color: gray;
+    /* text-decoration: none; */
+    margin:20px ;
+}
+.header .link{
+    /* background-color: gray; */
+    padding: 10px;
+    /* color: black; */
+}
